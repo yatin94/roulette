@@ -3,8 +3,21 @@
     <head>
         <title>Welcome To Roulette Game - Login</title>
 		
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+
 		<!-- CSS here -->
 		
+
 		<style>
 			
 			@import url('https://fonts.googleapis.com/css?family=Montserrat|Quicksand');
@@ -224,16 +237,16 @@
 		<div class="form-modal">
 			
 			<div class="form-toggle">
-				<button id="login-toggle" onclick="toggleLogin()">log in</button>
-				<button id="signup-toggle" onclick="toggleSignup()">sign up</button>
+				<button id="login-toggle" onclick="toggleLogin()">Log in</button>
+				<button id="signup-toggle" onclick="toggleSignup()">Sign up</button>
 			</div>
 			
 			<div id="login-form">
-				<form>
-					<input type="text" placeholder="Enter email or username"/>
-					<input type="password" placeholder="Enter password"/>
-					<button type="button" class="btn login">login</button>
-					<p><a href="javascript:void(0)">Forgotten account</a></p>
+				<form action="/login" method="POST">
+					<input type="text" name="Username" placeholder="Enter email or username"/>
+					<input type="password" name="Password" placeholder="Enter password"/>
+					<button type="submit" class="btn login">login</button>
+					<p><a href="javascript:void(0)">Forgot Password</a></p>
 				</form>
 			</div>
 			
@@ -246,7 +259,15 @@
 					<p>Clicking <strong>create account</strong> means that you are agree to our <a href="javascript:void(0)">terms of services</a>.</p>
 				</form>
 				</div>
-				
+				{%with messages = get_flashed_messages()%}
+				{%if messages%}
+				{%for message in messages%}
+				<div class="alert alert-danger">
+					<strong>{{message}}</strong>
+				  </div>
+				{%endfor%}
+				{%endif%}
+				{%endwith%}
 				</div>
 			<script type="text/javascript" src="js/custom.js"></script>
 			
