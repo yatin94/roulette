@@ -4,70 +4,141 @@
         <title>Welcome To Roulette Game - Play This Game And Test Your Luck  </title>
 		
 		<!-- CSS here -->
-		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	
 	<body>
 		
-		<div class="main">
-			<button type="button" class="btn" id="spin" style="position: relative;left: 23%;"><span class="btn-label">Spin</span></button>
-			<button type="button" class="btn btn-reset" id="reset" style="position: relative;left: 23%;"><span class="btn-label">New Game</span></button> 
-			<div class="plate" id="plate">
-				<ul class="inner">
-					<li class="number"><label><input type="radio" name="pit" value="32" /><span class="pit">32</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="15" /><span class="pit">15</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="19" /><span class="pit">19</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="4" /><span class="pit">4</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="21" /><span class="pit">21</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="2" /><span class="pit">2</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="25" /><span class="pit">25</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="17" /><span class="pit">17</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="34" /><span class="pit">34</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="6" /><span class="pit">6</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="27" /><span class="pit">27</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="13" /><span class="pit">13</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="36" /><span class="pit">36</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="11" /><span class="pit">11</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="30" /><span class="pit">30</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="8" /><span class="pit">8</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="23" /><span class="pit">23</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="10" /><span class="pit">10</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="5" /><span class="pit">5</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="24" /><span class="pit">24</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="16" /><span class="pit">16</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="33" /><span class="pit">33</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="1" /><span class="pit">1</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="20" /><span class="pit">20</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="14" /><span class="pit">14</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="31" /><span class="pit">31</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="9" /><span class="pit">9</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="22" /><span class="pit">22</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="18" /><span class="pit">18</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="29" /><span class="pit">29</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="7" /><span class="pit">7</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="28" /><span class="pit">28</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="12" /><span class="pit">12</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="35" /><span class="pit">35</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="3" /><span class="pit">3</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="26" /><span class="pit">26</span></label></li>
-					<li class="number"><label><input type="radio" name="pit" value="0" /><span class="pit">0</span></label></li>
-				</ul>
-				<div class="data">
-					<div class="data-inner">
-						<div class="mask"></div>
-						<div class="result">
-							<div class="result-number">00</div>
-							<div class="result-color">red</div>        
+		<div class="main container-fluid">
+			<div class="row mt-5">
+				<div class="col-md-3 col-sm-12 col-xs-12" >
+					<h1>Account Details</h1>
+					<h2 class="pt-3">Your Total Amount: 10000$</h2>
+					<form class="pt-3">
+						
+						<div class="form-group">
+							<input type="text" class="form-control" id="betting_amt" placeholder="Enter Betting Amount">
+						</div>
+						<div class="form-group pt-3">
+							<input type="number" class="form-control" id="random_number" placeholder="Enter Number Between 1-36">
+						</div>
+						<div class="form-group pt-3">
+							<input type="checkbox" id="random_button" class="material-control-input"> <span class="text-white">Even</span>
+							<input type="checkbox" id="random_button1" class="material-control-input ml-3"> <span class="text-white">Odd</span>
+							<input type="checkbox" id="random_button2" class="material-control-input ml-3"> <span class="text-white">Black</span>
+							<input type="checkbox" id="random_button3" class="material-control-input ml-3"> <span class="text-white">Red</span>
+							<!-- <button class="btn btn-default" style="background-color: white;">Even</button>
+							<button class="btn btn-info" >Odd</button>
+							<button class="btn btn-danger " >Red</button>
+							<button class="btn btn-dark" >Black</button> -->
+							<!-- <button class="btn btn-danger mt-1" >Danger</button>
+							<button class="btn btn-info mt-1" >Info</button> -->
+						</div>
+						<button class="btn btn-success mt-3" >SUBMIT</button>
+					</form>
+				</div>
+				<div class="col-md-5 col-sm-12 col-xs-12" >
+					<button type="button" class="btnn" id="spin" style="position: relative;left: 31%;"><span class="btn-label">Spin</span></button>
+					<button type="button" class="btnn btn-reset" id="reset" style="position: relative;left: 31%;"><span class="btn-label">New Game</span></button> 
+					<div class="plate mt-5" id="plate">
+						<ul class="inner">
+							<li class="number"><label><input type="radio" name="pit" value="32" /><span class="pit">32</span></label></li>
+							<li class="number"><label><input type="radio" name="pit" value="15" /><span class="pit">15</span></label></li>
+							<li class="number"><label><input type="radio" name="pit" value="19" /><span class="pit">19</span></label></li>
+							<li class="number"><label><input type="radio" name="pit" value="4" /><span class="pit">4</span></label></li>
+							<li class="number"><label><input type="radio" name="pit" value="21" /><span class="pit">21</span></label></li>
+							<li class="number"><label><input type="radio" name="pit" value="2" /><span class="pit">2</span></label></li>
+							<li class="number"><label><input type="radio" name="pit" value="25" /><span class="pit">25</span></label></li>
+							<li class="number"><label><input type="radio" name="pit" value="17" /><span class="pit">17</span></label></li>
+							<li class="number"><label><input type="radio" name="pit" value="34" /><span class="pit">34</span></label></li>
+							<li class="number"><label><input type="radio" name="pit" value="6" /><span class="pit">6</span></label></li>
+							<li class="number"><label><input type="radio" name="pit" value="27" /><span class="pit">27</span></label></li>
+							<li class="number"><label><input type="radio" name="pit" value="13" /><span class="pit">13</span></label></li>
+							<li class="number"><label><input type="radio" name="pit" value="36" /><span class="pit">36</span></label></li>
+							<li class="number"><label><input type="radio" name="pit" value="11" /><span class="pit">11</span></label></li>
+							<li class="number"><label><input type="radio" name="pit" value="30" /><span class="pit">30</span></label></li>
+							<li class="number"><label><input type="radio" name="pit" value="8" /><span class="pit">8</span></label></li>
+							<li class="number"><label><input type="radio" name="pit" value="23" /><span class="pit">23</span></label></li>
+							<li class="number"><label><input type="radio" name="pit" value="10" /><span class="pit">10</span></label></li>
+							<li class="number"><label><input type="radio" name="pit" value="5" /><span class="pit">5</span></label></li>
+							<li class="number"><label><input type="radio" name="pit" value="24" /><span class="pit">24</span></label></li>
+						<li class="number"><label><input type="radio" name="pit" value="16" /><span class="pit">16</span></label></li>
+						<li class="number"><label><input type="radio" name="pit" value="33" /><span class="pit">33</span></label></li>
+						<li class="number"><label><input type="radio" name="pit" value="1" /><span class="pit">1</span></label></li>
+						<li class="number"><label><input type="radio" name="pit" value="20" /><span class="pit">20</span></label></li>
+						<li class="number"><label><input type="radio" name="pit" value="14" /><span class="pit">14</span></label></li>
+						<li class="number"><label><input type="radio" name="pit" value="31" /><span class="pit">31</span></label></li>
+						<li class="number"><label><input type="radio" name="pit" value="9" /><span class="pit">9</span></label></li>
+						<li class="number"><label><input type="radio" name="pit" value="22" /><span class="pit">22</span></label></li>
+						<li class="number"><label><input type="radio" name="pit" value="18" /><span class="pit">18</span></label></li>
+						<li class="number"><label><input type="radio" name="pit" value="29" /><span class="pit">29</span></label></li>
+						<li class="number"><label><input type="radio" name="pit" value="7" /><span class="pit">7</span></label></li>
+						<li class="number"><label><input type="radio" name="pit" value="28" /><span class="pit">28</span></label></li>
+						<li class="number"><label><input type="radio" name="pit" value="12" /><span class="pit">12</span></label></li>
+						<li class="number"><label><input type="radio" name="pit" value="35" /><span class="pit">35</span></label></li>
+						<li class="number"><label><input type="radio" name="pit" value="3" /><span class="pit">3</span></label></li>
+						<li class="number"><label><input type="radio" name="pit" value="26" /><span class="pit">26</span></label></li>
+						<li class="number"><label><input type="radio" name="pit" value="0" /><span class="pit">0</span></label></li>
+						</ul>
+						<div class="data text-center">
+							<div class="data-inner">
+								<div class="mask"></div>
+								<div class="result">
+									<div class="result-number">00</div>
+									<div class="result-color">red</div>        
+								</div>
+							</div>
 						</div>
 					</div>
+					<div class="previous-results d-none">
+						<ol class="previous-list">
+							<li class='visuallyhidden placeholder'>No results yet.</li>
+						</ol>
+					</div>
 				</div>
-			</div>
-			<div class="previous-results">
-				<ol class="previous-list">
-					<li class='visuallyhidden placeholder'>No results yet.</li>
-				</ol>
+				<div class="col-md-4 col-sm-12 col-xs-12" >
+					<h1 class="pb-3">List Of Players Online</h1>
+					<table class="container ">
+						<thead>
+							<tr>
+								<th><h1>Name</h1></th>
+								<th><h1>Price Won</h1></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Google</td>
+								<td>9518</td>
+							</tr>
+							<tr>
+								<td>Twitter</td>
+								<td>7326</td>
+							</tr>
+							<tr>
+								<td>Amazon</td>
+								<td>4162</td>
+							</tr>
+							<tr>
+								<td>LinkedIn</td>
+								<td>3654</td>
+							</tr>
+							<tr>
+								<td>CodePen</td>
+								<td>2002</td>
+							</tr>
+							<tr>
+								<td>GitHub</td>
+								<td>4623</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 		<!-- JS here -->
@@ -76,6 +147,36 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 		<script type="text/javascript" src="js/custom.js"></script>
-		
+		<script>
+				$("#random_button").on('click', function() {
+			   if($(this).is(':checked')){
+					$("#random_number").prop('disabled',true);
+				} else {
+					$("#random_number").prop('disabled',false);
+				}
+			});
+			$("#random_button1").on('click', function() {
+			   if($(this).is(':checked')){
+					$("#random_number").prop('disabled',true);
+				} else {
+					$("#random_number").prop('disabled',false);
+				}
+			});
+			$("#random_button2").on('click', function() {
+			   if($(this).is(':checked')){
+					$("#random_number").prop('disabled',true);
+				} else {
+					$("#random_number").prop('disabled',false);
+				}
+			});
+			$("#random_button3").on('click', function() {
+			   if($(this).is(':checked')){
+					$("#random_number").prop('disabled',true);
+				} else {
+					$("#random_number").prop('disabled',false);
+				}
+			});
+			
+		</script>
 	</body>
 </html>	
