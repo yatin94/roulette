@@ -14,12 +14,11 @@
 	</head>
 	
 	<body>
-		
 		<div class="main container-fluid">
 			<div class="row mt-5">
 				<div class="col-md-3 col-sm-12 col-xs-12" >
 					<h1>Account Details</h1>
-					<h2 class="pt-3">Your Total Amount: 10000$</h2>
+					<h2 class="pt-3">Your Total Amount: {{session['money']}}$</h2>
 					<form class="pt-3">
 						
 						<div class="form-group">
@@ -108,34 +107,18 @@
 						<thead>
 							<tr>
 								<th><h1>Name</h1></th>
-								<th><h1>Price Won</h1></th>
+								<th><h1>Money Won</h1></th>
+								<th><h1>Total Money</h1></th>
 							</tr>
 						</thead>
 						<tbody>
+							{% for i in result%}
 							<tr>
-								<td>Google</td>
-								<td>9518</td>
+								<td>{{i[0]|capitalize}}</td>
+								<td>{{i[2]}}</td>
+								<td>{{i[1]}}</td>
 							</tr>
-							<tr>
-								<td>Twitter</td>
-								<td>7326</td>
-							</tr>
-							<tr>
-								<td>Amazon</td>
-								<td>4162</td>
-							</tr>
-							<tr>
-								<td>LinkedIn</td>
-								<td>3654</td>
-							</tr>
-							<tr>
-								<td>CodePen</td>
-								<td>2002</td>
-							</tr>
-							<tr>
-								<td>GitHub</td>
-								<td>4623</td>
-							</tr>
+							{%endfor%}
 						</tbody>
 					</table>
 				</div>
@@ -143,11 +126,15 @@
 		</div>
 		<!-- JS here -->
 		
+
+
+
 		<!-- Jquery Plugins, main Jquery -->	
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 		<script type="text/javascript" src="js/custom.js"></script>
 		<script>
+			
 				$("#random_button").on('click', function() {
 			   if($(this).is(':checked')){
 					$("#random_number").prop('disabled',true);
