@@ -2,6 +2,7 @@ from flask import Flask, flash, redirect, render_template, request,session, abor
 import json
 import os
 import mysql.connector 
+from jinja2 import Environment
 
 app =Flask(__name__,static_folder='templates/')
 
@@ -19,10 +20,6 @@ def mysqlconne_all(query,option):
             return myresult
         else:
             mydb.commit()
-
-def betplace():
-    mysqlconne_all("update testing set Bet ='"+session['bet']+"' where username = '"+session['username']+"'",'update')
-    return None
 
 
 @app.route("/")
@@ -43,6 +40,10 @@ def home():
         myresult = mysqlconne_all("select name,money,won from testing",'select')
         return render_template("index.html",result = myresult)
 
+@app.route("/betamount/<amt>")
+def betamount(amt):
+    mysqlconne_all("update testing set Bet ='"+amt+"' where username = '"+str(session['username'])+"'","update")
+    return amt+" points Booked"
 
 @app.route("/login",methods=['POST','GET'])
 def login():
@@ -72,6 +73,9 @@ def login():
         except:
             return render_template('login.html')
 
+
+
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)
-    app.run(debug=True,host='127.0.0.1',port="5060")
+    app.run(debug=True,host='192.168.1.42',port="5060")
+  

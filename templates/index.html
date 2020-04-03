@@ -39,8 +39,13 @@
 							<!-- <button class="btn btn-danger mt-1" >Danger</button>
 							<button class="btn btn-info mt-1" >Info</button> -->
 						</div>
-						<button class="btn btn-success mt-3" >SUBMIT</button>
+						<button type="button" onclick="testingfunnc()" class="btn btn-success mt-3" >SUBMIT</button>
 					</form>
+					<br>
+					<div class="alert alert-info" id="messagediv" role="alert" style="visibility:hidden;">
+						<strong id="message"></strong>
+					  </div>
+					
 				</div>
 				<div class="col-md-5 col-sm-12 col-xs-12" >
 					<button type="button" class="btnn" id="spin" style="position: relative;left: 31%;"><span class="btn-label">Spin</span></button>
@@ -126,15 +131,25 @@
 		</div>
 		<!-- JS here -->
 		
-
-
-
 		<!-- Jquery Plugins, main Jquery -->	
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 		<script type="text/javascript" src="js/custom.js"></script>
 		<script>
-			
+			function testingfunnc() {
+				amount = document.getElementById('betting_amt').value
+				var xamt = new XMLHttpRequest();
+				xamt.onreadystatechange = function() {
+					if (this.readyState==4 && this.status == 200) {
+						console.log(xamt.responseText);
+						document.getElementById("messagediv").style.visibility = 'Visible' 
+						document.getElementById("message").innerHTML=xamt.responseText
+					}
+				}
+
+				xamt.open('GET',"http://192.168.1.42:5060/betamount/"+amount)
+				xamt.send()
+			}
 				$("#random_button").on('click', function() {
 			   if($(this).is(':checked')){
 					$("#random_number").prop('disabled',true);
