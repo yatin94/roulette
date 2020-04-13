@@ -18,7 +18,7 @@
 			<div class="row mt-5">
 				<div class="col-md-3 col-sm-12 col-xs-12" >
 					<h1>Account Details</h1>
-					<h2 class="pt-3">Your Total Amount: {{session['money']}}$</h2>
+					<h2 class="pt-3" id="amouth2">Your Total Amount: ${{session['money']}}</h2>
 					<form class="pt-3">
 						
 						<div class="form-group">
@@ -44,6 +44,9 @@
 					<br>
 					<div class="alert alert-info" id="messagediv" role="alert" style="visibility:hidden;">
 						<strong id="message"></strong>
+					  </div>
+					  <div class="alert alert-success" id="messagesuccessdiv" role="alert" style="visibility:hidden;">
+						<strong id="messagesuccess"></strong>
 					  </div>
 					
 				</div>
@@ -108,7 +111,7 @@
 				</div>
 				<div class="col-md-4 col-sm-12 col-xs-12" >
 					<h1 class="pb-3">List Of Players Online</h1>
-					<table class="container ">
+					<table class="container " id="mytable">
 						<thead>
 							<tr>
 								<th><h1>Name</h1></th>
@@ -138,16 +141,16 @@
 		<script>
 			function testingfunnc() {
 				amount = document.getElementById('betting_amt').value
+				number = document.getElementById('random_number').value
 				var xamt = new XMLHttpRequest();
 				xamt.onreadystatechange = function() {
 					if (this.readyState==4 && this.status == 200) {
-						console.log(xamt.responseText);
 						document.getElementById("messagediv").style.visibility = 'Visible' 
 						document.getElementById("message").innerHTML=xamt.responseText
 					}
 				}
 
-				xamt.open('GET',"http://192.168.1.42:5060/betamount/"+amount)
+				xamt.open('GET',"http://192.168.1.42:5060/betamount/"+amount+","+number)
 				xamt.send()
 			}
 				$("#random_button").on('click', function() {
