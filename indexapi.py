@@ -107,7 +107,7 @@ def winner():
 
 @app.route("/getmoneytable")
 def getmoneytable():
-    myresult = mysqlconne_all("select name,money,won from testing",'select')
+    myresult = mysqlconne_all("select name,won,money from testing",'select')
     return jsonify({"data":myresult,"count":len(myresult)})
 
 
